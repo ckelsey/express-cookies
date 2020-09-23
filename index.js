@@ -27,6 +27,7 @@ app.use(passport.initialize())
 app.use(passport.session())
 
 app.use((req, res) => {
+    res.cookie('_csrf', 'abcdefg', { httpOnly: true, secure: true, sameSite: 'None' })
     res.json({ hi: 'hello' })
 })
 
